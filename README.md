@@ -1,7 +1,20 @@
-This repository contains a Python script that allows users of the DMOJ online judge to scrape their profile. By providing their login credentials, the script accesses the user’s account and collects all problems that have been solved (with the status "AC"). For each problem, the script creates a folder in the Documents directory that includes:
 
-- A folder named after the problem.
-- A `README.md` file containing the problem description.
-- A `solve.extension` file that contains the solution code.
+Este repositorio contiene un script en Python que permite a los usuarios del juez virtual DMOJ realizar scraping de su perfil. Al proporcionar sus credenciales de inicio de sesión, el script accede a la cuenta del usuario y recopila todos los problemas que han sido resueltos (con el estado "AC"). Para cada problema, el script crea una carpeta en el directorio de Documentos que incluye:
 
-This project is ideal for those who wish to keep an organized record of their programming problem solutions and easily share them on platforms like GitHub.
+- Una carpeta con el nombre del problema.
+- Un archivo `README.md` que contiene la descripción del problema.
+- Un archivo `solve.extension` que contiene el código de la solución.
+
+Este proyecto es ideal para quienes deseen mantener un registro organizado de sus soluciones a problemas de programación y compartirlas fácilmente en plataformas como GitHub.
+
+### Cómo Usar
+1. Clona este repositorio en tu máquina local.
+2. Navega al directorio del proyecto e instala las dependencias requeridas ejecutando:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Ejecuta el script principal usando:
+   ```bash
+   python main.py
+   ```
+4. Cuando se te pida, ingresa tu nombre de usuario y contraseña de DMOJ. El script realizará automáticamente el scraping de tu perfil, recopilará todos los problemas resueltos y los organizará en el directorio de Documentos. ¡Solo queda esperar a que el proceso se complete!

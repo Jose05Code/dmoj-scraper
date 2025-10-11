@@ -75,7 +75,3 @@ Contributions are welcome! Feel free to:
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## ⚠️ Disclaimer
-
-This tool is intended for personal use to organize your own solutions. Please respect the DMOJ platform's terms of service and use this tool responsibly.

@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
-from Assets.login import iniciar_sesion
-from Assets.Scraping import Problemas_Scraping, Main_Scraping
+from src.dmoj_scrapper.login import iniciar_sesion
+from src.dmoj_scrapper.Scraping import Problemas_Scraping, Main_Scraping
 
 if __name__ == "__main__":
     # Iniciar sesión

@@ -39,8 +39,8 @@ def scrapping_problems(session):
     pag = 1
     while(flag):
 
-        url_issues = "https://dmoj.uclv.edu.cu/problems/?order=-solved&page="+ str(pag)  # lista de Problemas
-        response = session.get(url_issues)
+        problems_url = "https://dmoj.uclv.edu.cu/problems/?order=-solved&page="+ str(pag)  # lista de Problemas
+        response = session.get(problems_url)
 
         soup = BeautifulSoup(response.text, 'html.parser')
 

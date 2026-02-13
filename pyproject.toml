@@ -2,7 +2,7 @@
 name = "dmoj_scrapper"
 version = "1.0.0"
 authors = [
-  { name="Jose05Code", email="tuemailaqui@sere" },
+  { name="Jose05Code", email="josefradegala@gmail.com" },
 ]
 dependencies = [
 "beautifulsoup4>=4.12.3",

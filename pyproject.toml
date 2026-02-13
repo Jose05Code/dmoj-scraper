@@ -2,7 +2,7 @@
 name = "dmoj_scrapper"
 version = "1.0.0"
 authors = [
-  { name="Jose05Code", email="put your email @ here >:V" },
+  { name="eltut0", email="tuto210705@gmail.com" },
 ]
 dependencies = [
 "beautifulsoup4>=4.12.3",
@@ -13,7 +13,6 @@ dependencies = [
 "soupsieve>=2.6",
 "Unidecode>=1.3.8",
 "urllib3>=2.2.3",
-"argparse>=1,4",
 ]
 description = "Dmoj scraper"
 readme = "README.md"
@@ -22,7 +21,6 @@ classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Intended Audience :: Education",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.9",

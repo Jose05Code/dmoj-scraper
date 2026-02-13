@@ -1,0 +1,47 @@
+[project]
+name = "dmoj_scrapper"
+version = "1.0.0"
+authors = [
+  { name="Jose05Code", email="put your email @ here >:V" },
+]
+dependencies = [
+"beautifulsoup4>=4.12.3",
+"certifi>=2024.8.30",
+"charset-normalizer>=3.4.0",
+"idna>=3.10",
+"requests>=2.32.3",
+"soupsieve>=2.6",
+"Unidecode>=1.3.8",
+"urllib3>=2.2.3",
+]
+description = "Dmoj scraper"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10", 
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Education",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.urls]
+Homepage = "https://github.com/Jose05Code/dmoj-scraper"
+Issues = "https://github.com/Jose05Code/dmoj-scraper/issues"

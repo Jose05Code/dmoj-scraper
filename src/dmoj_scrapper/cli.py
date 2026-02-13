@@ -4,20 +4,20 @@ import argparse
 
 def main():
     parser = argparse.ArgumentParser(
-        description="🕸️ DMOJ Scraper - Descarga tus soluciones de DMOJ",
-        epilog="Ejemplo: %(prog)s -u jose05code -p mi_contrasenna"
+        description="DMOJ Scraper - Download your DMOJ submissions",
+        epilog="Example: %(prog)s -u jose05code"
     )
 
     parser.add_argument(
         '-u', '--user',
         required=False,
-        help='Tu usuario de DMOJ'
+        help='User for login'
     )
 
     parser.add_argument(
         '-p', '--password',
         required=False,
-        help='Tu contrasenna de DMOJ'
+        help='Password to use when connecting to server'
     )
 
     args = parser.parse_args()

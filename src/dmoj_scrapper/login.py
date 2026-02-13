@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-def iniciar_sesion():
+def login():
     while(1):
         # URL de inicio de sesión
         login_url = "https://dmoj.uclv.edu.cu/accounts/login/?next="

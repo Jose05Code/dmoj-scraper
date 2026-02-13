@@ -1,8 +1,15 @@
-import requests
 from bs4 import BeautifulSoup
 from unidecode import unidecode  # Importar la biblioteca para quitar tildes
-from .login import iniciar_sesion
 from .fichero_data import crear_carpeta
+from .login import login
+
+# main function
+def full_scraping():
+    user_session = login()
+    
+    if user_session:
+        problem_list = Problemas_Scraping(user_session)
+        Main_Scraping(user_session, problem_list)
 
 # Función para convertir HTML a Markdown y quitar tildes
 def format_description(html_content):

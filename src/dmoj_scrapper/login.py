@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 
 # Arguments for case of cli given info
 def login(username: str = "", password: str = ""):
+    
     while True:
         # URL de inicio de sesión
         login_url = "https://dmoj.uclv.edu.cu/accounts/login/?next="

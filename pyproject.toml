@@ -2,7 +2,7 @@
 name = "dmoj_scrapper"
 version = "1.0.0"
 authors = [
-  { name="eltut0", email="tuto210705@gmail.com" },
+  { name="Jose05Code", email="tuemailaqui@sere" },
 ]
 dependencies = [
 "beautifulsoup4>=4.12.3",
@@ -37,6 +37,9 @@ license-files = ["LICEN[CS]E*"]
 [build-system]
 requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[project.scripts]
+dmoj-scraper = "dmoj_scrapper.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

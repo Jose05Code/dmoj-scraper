@@ -37,7 +37,7 @@ def scrapping_problems(session):
     flag = 1
     problem_list = []
     pag = 1
-    while(flag):
+    while flag:
 
         problems_url = "https://dmoj.uclv.edu.cu/problems/?order=-solved&page="+ str(pag)  # lista de Problemas
         response = session.get(problems_url)

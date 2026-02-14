@@ -43,5 +43,5 @@ def login(username: str = "", password: str = ""):
             print("Error en el inicio de sesión:", login_response.status_code)
 
             # Handle case with arguments
-            if (len(username+password) != 0):
+            if len(username+password) != 0:
                 break

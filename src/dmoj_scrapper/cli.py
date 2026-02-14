@@ -24,7 +24,7 @@ def main():
 
 
     # Handle case with arguments and interactive cli case
-    if (args.user and args.password):
+    if args.user and args.password:
         user_session = login(args.user, args.password)
     else:
         user_session = login()

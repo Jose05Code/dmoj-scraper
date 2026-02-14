@@ -94,35 +94,6 @@ pip install ./dist/file.whl
 dmoj-scrapper -h
 # It will show you how to use by cli
 ```
-2. **Import to python file**
-```python
-from dmoj_scrapper import full_scrapping, login, main_scrapping, scrapping_problems
-from requests import Session
-
-full_scrapping()
- # main function, execs the full scrapping process by launching an interactive menu where the
- # user introduces the info
-
-""" These functions are also available: """
-
- # user's info
-my_user = "your_user"
-my_password = "my_password"
-
-login(my_user, my_password)
- # attempts a login, 
- # returns a requests.Session object if success
- # args are optional, if not given, it will display an interactive menu for input
-
-session = Session() # assume a valid session from login()
- 
-problems_list = scrapping_problems(session)
- # receives a valid session and returns a list with every solved problem's url
-
-main_scrapping(session, problems_list)
- # gets the info of every problem, and makes de whole structure
-
-```
 
 ## 🤝 Contributing
 

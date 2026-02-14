@@ -27,8 +27,8 @@ def login(username: str = "", password: str = ""):
         # Configurar el payload con el token CSRF y credenciales
         
         payload = {
-            "username": input("Inserte el usuario: ") if len(username + password) == 0 else username,
-            "password": input("Inserte la contrasenna: ") if len(username + password) == 0 else password,
+            "username": input("Inserte el usuario: ") if len(username) == 0 else username,
+            "password": input("Inserte la contrasenna: ") if len(password) == 0 else password,
             "csrfmiddlewaretoken": csrf_token
         }
 
@@ -42,6 +42,6 @@ def login(username: str = "", password: str = ""):
         else:
             print("Error en el inicio de sesión:", login_response.status_code)
 
-            # Handle case with arguments
-            if len(username+password) != 0:
+            # Handle case with arguments, if both are given, it makes no sense to retry a login that will fail every time
+            if len(username) !=0 and len(password) != 0:
                 break

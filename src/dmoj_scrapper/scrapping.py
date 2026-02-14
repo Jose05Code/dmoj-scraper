@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 from unidecode import unidecode  # Importar la biblioteca para quitar tildes
-from .file_data import mkdir
-from .login import login
+from file_data import mkdir
+from login import login
 
 # main function
 def full_scrapping():
@@ -83,6 +83,7 @@ def main_scrapping(session, problem_set):
             # print(code)
         else:
             print("No se encontró ningún elemento 'sub-result AC'.")
+            continue
 
         #   Sacar Descripción
         problem_parts = problem_url.split('/')

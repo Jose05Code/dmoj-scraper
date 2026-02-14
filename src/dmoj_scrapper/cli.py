@@ -1,5 +1,5 @@
-from .login import login
-from .scrapping import scrapping_problems, main_scrapping
+from login import login
+from scrapping import scrapping_problems, main_scrapping
 import argparse
 
 def main():
@@ -22,12 +22,7 @@ def main():
 
     args = parser.parse_args()
 
-
-    # Handle case with arguments and interactive cli case
-    if args.user and args.password:
-        user_session = login(args.user, args.password)
-    else:
-        user_session = login()
+    user_session = login(args.user if args.user else '', args.password if args.password else '')
 
     if user_session:
         problem_list = scrapping_problems(user_session)

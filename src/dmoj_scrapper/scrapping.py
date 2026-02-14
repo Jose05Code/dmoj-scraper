@@ -1,8 +1,15 @@
-import requests
 from bs4 import BeautifulSoup
 from unidecode import unidecode  # Importar la biblioteca para quitar tildes
-from .login import iniciar_sesion
-from .fichero_data import crear_carpeta
+from file_data import mkdir
+from login import login
+
+# main function
+def full_scrapping():
+    user_session = login()
+    
+    if user_session:
+        problem_list = scrapping_problems(user_session)
+        main_scrapping(user_session, problem_list)
 
 # Función para convertir HTML a Markdown y quitar tildes
 def format_description(html_content):
@@ -25,15 +32,15 @@ def format_description(html_content):
     return unidecode(formatted_text)
 
 # Obtener una lista con cada URL de problemas resueltos
-def Problemas_Scraping(session):
+def scrapping_problems(session):
     print("Recolectando Problemas...")
     flag = 1
     problem_list = []
     pag = 1
-    while(flag):
+    while flag:
 
-        problemas_url = "https://dmoj.uclv.edu.cu/problems/?order=-solved&page="+ str(pag)  # lista de Problemas
-        response = session.get(problemas_url)
+        problems_url = "https://dmoj.uclv.edu.cu/problems/?order=-solved&page="+ str(pag)  # lista de Problemas
+        response = session.get(problems_url)
 
         soup = BeautifulSoup(response.text, 'html.parser')
 
@@ -55,9 +62,9 @@ def Problemas_Scraping(session):
     print(f"Problemas Encontrados : {len(problem_list)}")
     return problem_list
 
-def Main_Scraping(session, problemas_url):
-    for problema_url in problemas_url:
-        url = f"https://dmoj.uclv.edu.cu/{problema_url}"
+def main_scrapping(session, problem_set):
+    for problem_url in problem_set:
+        url = f"https://dmoj.uclv.edu.cu/{problem_url}"
         response = session.get(url)
         soup = BeautifulSoup(response.text, 'html.parser')
 
@@ -76,18 +83,19 @@ def Main_Scraping(session, problemas_url):
             # print(code)
         else:
             print("No se encontró ningún elemento 'sub-result AC'.")
+            continue
 
         #   Sacar Descripción
-        problema_parts = problema_url.split('/')
-        description_url = f"https://dmoj.uclv.edu.cu/problem/{problema_parts[2]}"
+        problem_parts = problem_url.split('/')
+        description_url = f"https://dmoj.uclv.edu.cu/problem/{problem_parts[2]}"
         description_response = session.get(description_url)
         description_soup = BeautifulSoup(description_response.text, 'html.parser')
 
-        Titulo = description_soup.select_one("#content > div.problem-title > h2").text
+        tittle = description_soup.select_one("#content > div.problem-title > h2").text
         # Extraer el contenido HTML de la descripción
-        Description = description_soup.select_one("#content-left > div.content-description.screen > div").decode_contents()
+        description = description_soup.select_one("#content-left > div.content-description.screen > div").decode_contents()
 
         # Formatear la descripción y quitar tildes
-        formatted_description = format_description(Description)
+        formatted_description = format_description(description)
 
-        crear_carpeta(Titulo, code, formatted_description, language_element)
+        mkdir(tittle, code, formatted_description, language_element)

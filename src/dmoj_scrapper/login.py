@@ -1,7 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
-def iniciar_sesion():
-    while(1):
+
+# Arguments for case of cli given info
+def login(username: str = "", password: str = ""):
+    
+    while True:
         # URL de inicio de sesión
         login_url = "https://dmoj.uclv.edu.cu/accounts/login/?next="
 
@@ -24,8 +27,8 @@ def iniciar_sesion():
         # Configurar el payload con el token CSRF y credenciales
         
         payload = {
-            "username": input("Inserte el usuario: "),
-            "password": input("Inserte la contrasenna: "),
+            "username": input("Inserte el usuario: ") if len(username) == 0 else username,
+            "password": input("Inserte la contrasenna: ") if len(password) == 0 else password,
             "csrfmiddlewaretoken": csrf_token
         }
 
@@ -38,3 +41,7 @@ def iniciar_sesion():
             return session
         else:
             print("Error en el inicio de sesión:", login_response.status_code)
+
+            # Handle case with arguments, if both are given, it makes no sense to retry a login that will fail every time
+            if len(username) !=0 and len(password) != 0:
+                break

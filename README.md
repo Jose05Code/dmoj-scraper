@@ -65,6 +65,36 @@ The script creates the following structure in your Documents folder:
 └── ...
 ```
 
+## Installing from pip
+**The package is available at PyPI repositories, execute the following command for installing**:
+```bash
+pip install dmoj-scrapper
+```
+
+## Packaging
+    
+### 1. **Install packing dependencies**
+ ```bash 
+pip install build
+ ```
+### 2. **Packing** 
+```bash
+python -m build # at the root of the project
+# It will generate 2 files at ./dist/
+```
+### 3. Installing package
+```bash
+pip install ./dist/file.whl
+# replace file name with your .whl file generated at ./dist
+```
+
+### **Usage**
+1. **Execute in terminal**
+```bash
+dmoj-scrapper -h
+# It will show you how to use by cli
+```
+
 ## 🤝 Contributing
 
 Contributions are welcome! Feel free to:
